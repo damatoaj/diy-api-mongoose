@@ -26,7 +26,11 @@ db.on('error', err => {
 });
 
 //controllers
+app.use('/bands', require('./controllers/band'));
 
 //routes
+app.get('/', (req,res) => {
+    res.json({message: "For those about to rock"})
+})
 
 app.listen(3000 || process.env.PORT, () => console.log (`You're connected to port ${3000 || process.env.PORT}`))
